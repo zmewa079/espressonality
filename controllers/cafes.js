@@ -24,13 +24,24 @@ function create(req, res) {
   .then(() => {
     res.redirect('/')
   })
+}
 
+function show(req, res) {
+  Cafe.findById(req.params.id)
+    .then((cafe) => {
+      res.render('cafes/show', {
+        title: 'Cafe Detail',
+        user: req.user,
+        cafe
+      })
+    })
 }
 
 export {
   index,
   newCafe as new,
-  create
+  create,
+  show
 }
 
 
