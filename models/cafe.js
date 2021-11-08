@@ -16,6 +16,7 @@ const cafeSchema = new Schema({
   website: String,
   location: String,
   reviews: [reviewSchema],
+  
 })
 
 const Cafe = mongoose.model("Cafe", cafeSchema)
