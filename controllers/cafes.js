@@ -12,9 +12,18 @@ function newCafe(req, res) {
   })
 }
 
+function create(req, res) {
+  Cafe.create(req.body)
+  .then(() => {
+    res.redirect('/')
+  })
+
+}
+
 export {
   index,
-  newCafe as new
+  newCafe as new,
+  create
 }
 
 
