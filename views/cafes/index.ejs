@@ -1,8 +1,16 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<h1>Your Cafe List</h1>
 
+<% cafes.forEach(cafe => { %>
+  <div>
+    <h3>Name: <%= cafe.name %> </h3>
+    <h3>Address: <%= cafe.address %> </h3>
+    <h3>Website: <%= cafe.website %> </h3>
+  </div>
 
+<% }) %>
 
 
 

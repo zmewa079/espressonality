@@ -3,7 +3,7 @@ import * as cafesCtrl from '../controllers/cafes.js'
 
 const router = Router()
 
-// router.get('/cafes', isLoggedIn, cafesCtrl.index)
+router.get('/', isLoggedIn, cafesCtrl.index)
 router.get('/new', isLoggedIn, cafesCtrl.new)
 router.post('/', isLoggedIn, cafesCtrl.create)
 
