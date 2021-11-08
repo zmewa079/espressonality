@@ -7,8 +7,12 @@
   <div>
     <h3>Name: <%= cafe.name %> </h3>
     <h3>Location: <%= cafe.location %> </h3>
-  <a href="/cafes/<%= cafe._id %>">DETAILS</a>
+    <h3><a href="/cafes/<%= cafe._id %>">Details</a></h3>
   </div>
+  
+  <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
+    <button>Erase</button>
+  </form>
   
 <% }) %>
 

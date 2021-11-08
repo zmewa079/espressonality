@@ -48,7 +48,10 @@ function createReview(req, res) {
 }
 
 function deleteCafe(req, res) {
-
+  Cafe.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/cafes')
+  })
 }
 
 
