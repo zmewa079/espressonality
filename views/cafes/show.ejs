@@ -48,6 +48,19 @@
 <button type= "submit">Add Review</button>
 
 </form> 
+
+<% if (cafe.reviews.length) { %>
+  <% cafe.reviews.forEach((review)=> { %>
+    <h3>Ambience Level: <%= review.ambience %></h3>
+    <h3>Average Price: <%= review.avgprice %></h3>
+    <h3>Rating: <%= review.rating %></h3> 
+    <h3>Recommendation: <%= review.recommendation %></h3>
+    <h3>Comments: <%= review.comments %></h3>
+  <% }) %>
+  <% } else { %>
+    <h3>No Reviews Yet</h3>
+  <% } %>
+
 </main>
 
 

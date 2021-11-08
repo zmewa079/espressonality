@@ -6,14 +6,11 @@
 <% cafes.forEach(cafe => { %>
   <div>
     <h3>Name: <%= cafe.name %> </h3>
-    <!-- <h3>Address: <%= cafe.address %> </h3>
-    <h3>Website: <%= cafe.website %> </h3> -->
-    <a href="/cafes/<%= cafe._id %>">
-			DETAILS
+    <h3>Location: <%= cafe.location %> </h3>
+  <a href="/cafes/<%= cafe._id %>">DETAILS</a>
   </div>
-
+  
 <% }) %>
-
 
 
 <%- include('../partials/footer') %>

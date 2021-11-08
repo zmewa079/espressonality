@@ -22,7 +22,7 @@ function newCafe(req, res) {
 function create(req, res) {
   Cafe.create(req.body)
   .then(() => {
-    res.redirect('/')
+    res.redirect('/cafes')
   })
 }
 
@@ -38,7 +38,12 @@ function show(req, res) {
 }
 
 function createReview(req, res) {
-  
+  Cafe.findById(req.params.id)
+  .then((cafe)=> {
+    cafe.reviews.push(req.body)
+    cafe.save()
+    res.redirect(`/cafes/${cafe._id}`)
+  })
 }
 
 export {
