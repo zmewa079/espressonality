@@ -11,6 +11,43 @@
     <h3>Website: <%= cafe.website %> </h3>
   </div>
 </section>
+
+
+<h2>Reviews</h2>
+<form action="/cafes/<%= cafe._id %>/reviews" method="POST">
+
+<h3><label for="ambience-selector"></label>Ambience Level:</label>
+<select name="ambience">id="ambience-selector">
+  <option value="calm">Calm</option>
+  <option value="moderate">Moderate</option>
+  <option value="busy">Busy</option>
+  <option value="noisy">Noisy</option>
+  </select></h3>
+
+<h3><label for="avgprice-selector"></label>Average Price:</label>
+<select name="avgprice">id="avgprice-selector">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select></h3>
+
+<h3><label for="rating-selector"></label>Rating:</label>
+  <select name="rating">id="rating-selector">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select></h3>
+
+  <h3>Recommendation: <input name="recommendation" type="text"></h3>
+
+  <h3>Comments: <input name="comments" type="text"></h3>
+<button type= "submit">Add Review</button>
+
+</form> 
 </main>
 
 
