@@ -38,7 +38,9 @@ function show(req, res) {
 }
 
 function createReview(req, res) {
+  req.body.reviews.addedBy = req.user.profile._id
   Cafe.findById(req.params.id)
+  .populate('addedBy')
   .then((cafe)=> {
     cafe.reviews.push(req.body)
     cafe.save()
@@ -46,12 +48,18 @@ function createReview(req, res) {
   })
 }
 
+function deleteCafe(req, res) {
+
+}
+
+
 export {
   index,
   newCafe as new,
   create,
   show,
-  createReview
+  createReview,
+  deleteCafe as delete
 }
 
 

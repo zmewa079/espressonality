@@ -8,6 +8,7 @@ router.get('/new', isLoggedIn, cafesCtrl.new)
 router.post('/', isLoggedIn, cafesCtrl.create)
 router.get('/:id', isLoggedIn, cafesCtrl.show)
 router.post('/:id/reviews', isLoggedIn, cafesCtrl.createReview)
+router.delete('/:id', isLoggedIn, cafesCtrl.delete)
 
 
 
