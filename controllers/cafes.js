@@ -54,6 +54,23 @@ function deleteCafe(req, res) {
   })
 }
 
+function edit(req, res) {
+  Cafe.findById(req.params.id)
+  .then((cafe) => {
+    res.render('cafes/edit', {
+      title: 'Edit Cafe Entries',
+      user: req.user,
+      cafe
+    })
+  })
+}
+
+function update(req, res) {
+  Cafe.findByIdAndUpdate(req.params.id, req.body)
+  .then((cafe) => {
+    res.redirect(`/cafes/${cafe._id}`)
+  })
+}
 
 export {
   index,
@@ -61,7 +78,9 @@ export {
   create,
   show,
   createReview,
-  deleteCafe as delete
+  deleteCafe as delete,
+  edit,
+  update
 }
 
 
