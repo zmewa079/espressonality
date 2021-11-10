@@ -1,8 +1,10 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
+<script src="javascript/app.js" type="module"></script>
 
 <main>
   <h1>Welcome, <%= user ? user.profile.name : "friend" %></h1>
+  
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
@@ -10,7 +12,11 @@
         alt="<%= user.profile.name %> avatar"
       >
     </div>
+    <div>
+    <h3>Google Email: <%= user.email %></h3>
+    <h3>Name: <%= user.profile.name %></h3>
   <% } %>
+  </div>
 </main>
 
 <%- include('./partials/footer') %>

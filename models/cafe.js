@@ -7,7 +7,7 @@ const reviewSchema = new Schema({
   avgprice: {type: Number, enum: [1, 2, 3, 4, 5]},
   rating: {type: Number, enum: [1, 2, 3, 4, 5]},
   comments: String,
-  addedBy: [{type: Schema.Types.ObjectId, ref: 'Profile'}]
+  addedBy: {type: Schema.Types.ObjectId, ref: 'Profile'}
 })
 
 const cafeSchema = new Schema({

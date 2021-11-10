@@ -9,6 +9,10 @@ function index(req, res) {
       title: 'My Favorite Cafes',
       cafes
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
   })
 }
 
@@ -17,6 +21,10 @@ function newCafe(req, res) {
     title: 'Add Cafe',
     user: req.user
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function create(req, res) {
@@ -24,17 +32,25 @@ function create(req, res) {
   .then(() => {
     res.redirect('/cafes')
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function show(req, res) {
   Cafe.findById(req.params.id)
-  // .populate('reviews.addedBy')
+  .populate('reviews.addedBy')
     .then((cafe) => {
       res.render('cafes/show', {
         title: 'Cafe Detail',
         user: req.user,
         cafe
       })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
     })
 }
 
@@ -46,23 +62,35 @@ function createReview(req, res) {
     cafe.save()
     res.redirect(`/cafes/${cafe._id}`)
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function deleteReview(req, res) {
   Cafe.findById(req.params.cafeId)
   .then(cafe => {
-  cafe.reviews.remove({_id: req.params.reviewId})
-  cafe.save()
-  .then(() => {
+    cafe.reviews.remove({_id: req.params.reviewId})
+    cafe.save()
+    .then(() => {
     res.redirect(`/cafes/${cafe._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
   })
-})
 }
 
 function deleteCafe(req, res) {
   Cafe.findByIdAndDelete(req.params.id)
   .then(() => {
     res.redirect('/cafes')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -74,6 +102,10 @@ function edit(req, res) {
       user: req.user,
       cafe
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
   })
 }
 
@@ -82,6 +114,10 @@ function update(req, res) {
   .then((cafe) => {
     res.redirect(`/cafes/${cafe._id}`)
   })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/')
+  // })
 }
 
 
