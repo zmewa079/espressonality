@@ -63,6 +63,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/cafes', cafesRouter)
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))

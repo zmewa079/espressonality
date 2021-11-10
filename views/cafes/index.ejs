@@ -2,7 +2,12 @@
 <%- include('../partials/nav') %>
 
 <h1>Your Cafe List</h1>
-
+<h2>
+<a href="/cafes/new">
+  <button type="submit">Add Cafe</button>
+</a>
+</h2>
+<% if (cafes.length) { %> 
 <% cafes.forEach(cafe => { %>
   <div>
     <h3>Name: <%= cafe.name %> </h3>
@@ -15,6 +20,8 @@
   </form>
   
 <% }) %>
-
+<% } else { %> 
+  <h2>There is no cafes added to this collection</h2>
+<% } %> 
 
 <%- include('../partials/footer') %>
