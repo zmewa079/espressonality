@@ -114,10 +114,10 @@ function update(req, res) {
   .then((cafe) => {
     res.redirect(`/cafes/${cafe._id}`)
   })
-  // .catch(err => {
-  //   console.log(err)
-  //   res.redirect('/')
-  // })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 
