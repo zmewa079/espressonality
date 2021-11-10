@@ -47,6 +47,17 @@ function createReview(req, res) {
   })
 }
 
+function deleteReview(req, res) {
+  Cafe.findById(req.params.cafeId)
+  .then(cafe => {
+  cafe.reviews.remove({_id: req.params.reviewId})
+  cafe.save()
+  .then(() => {
+    res.redirect(`/cafes/${cafe._id}`)
+  })
+})
+}
+
 function deleteCafe(req, res) {
   Cafe.findByIdAndDelete(req.params.id)
   .then(() => {
@@ -72,6 +83,8 @@ function update(req, res) {
   })
 }
 
+
+
 export {
   index,
   newCafe as new,
@@ -80,7 +93,8 @@ export {
   createReview,
   deleteCafe as delete,
   edit,
-  update
+  update,
+  deleteReview
 }
 
 

@@ -59,7 +59,10 @@
     <h3>Rating: <%= review.rating %></h3> 
     <h3>Recommendation: <%= review.recommendation %></h3>
     <h3>Comments: <%= review.comments %></h3>   
-    <!-- <h3>Review Added By: <%= review.addedBy.name %></h3>    -->
+    <h3>Review Added By: <%= review.addedBy.name %></h3>
+    <form action="/cafes/<%= cafe._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+      <button>erase</button>
+    </form>   
   <% }) %>
   <% } else { %>
     <h3>No Reviews Yet</h3>
