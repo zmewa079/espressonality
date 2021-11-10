@@ -28,6 +28,7 @@ function create(req, res) {
 
 function show(req, res) {
   Cafe.findById(req.params.id)
+  // .populate('reviews.addedBy')
     .then((cafe) => {
       res.render('cafes/show', {
         title: 'Cafe Detail',
