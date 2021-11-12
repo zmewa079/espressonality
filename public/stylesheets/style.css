@@ -26,10 +26,25 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: #DEB887;
+  height: 50px;
   font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  justify-content: row;
+}
+
+.logoutBtn {
+  margin-top: 29px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+.catalogBtn {
+  margin-top: 29px;
+  margin-right: 10px;
+}
+.homeBtn {
+  margin-top: 29px;
 }
 
 section {
@@ -57,3 +72,11 @@ h2 {
   text-align: center;
 }
 
+#coffee-right {
+  margin-left: 10px;
+  
+}
+/* .container{
+  position:relative; 
+  left: 1140px; 
+} */

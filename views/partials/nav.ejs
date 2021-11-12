@@ -4,10 +4,13 @@
 </head>
 <body>
   <nav>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img id="coffee-right" src="/images/cafe/crazycoffee.png" alt="" width="70" height="50"> 
       </a>
+    </div>
+    <% if (user) { %>
+      <a href="/auth/logout">Logout</a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
@@ -16,10 +19,10 @@
       </a>
     <% } %>
     <a href="/cafes">
-    <button type="submit">Cafe Catalog</button>
+    <button class="catalogBtn" type="submit">Cafe Catalog</button>
     </a>
     <a href="/">
-    <button type="submit">Home</button>
+    <button class="homeBtn" type="submit">Home</button>
     </a>
     
   </nav>
