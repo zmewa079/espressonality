@@ -6,7 +6,7 @@ function index(req, res) {
   .then(cafes => {
     res.render('cafes/index', {
       user: req.user,
-      title: 'My Favorite Cafes',
+      title: 'Cafe Catalog',
       cafes
     })
     .catch(err => {
@@ -119,8 +119,6 @@ function update(req, res) {
     res.redirect('/')
   })
 }
-
-
 
 export {
   index,
