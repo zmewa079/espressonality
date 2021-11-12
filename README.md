@@ -9,8 +9,6 @@
 ### Click [here](https://espressonality.herokuapp.com/) to go to the application. 
 
 ## View 
-### ERD
-![image of ERD](public/images/project-imgs/ERD.png)
 
 ### Wireframe
 ![image of wireframe](public/images/project-imgs/Project2Wireframe.png)
