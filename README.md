@@ -42,4 +42,3 @@ Images from [Pixaby](https://pixabay.com/)
 ## Stretch Goals
 + Add more profile application interaction
 + Add an additional page for user favorites
-+ Make it so the user can only delete their added cafe and reviews
