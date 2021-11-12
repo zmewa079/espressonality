@@ -1,24 +1,57 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>Your Cafe List</h1>
+<h1>Cafe Catalog</h1>
 <h2>
 <a href="/cafes/new">
-  <button type="submit">Add Cafe</button>
+  <button class="addcafeBtn" type="submit">Add Cafe</button>
 </a>
 </h2>
+<section>
 <% if (cafes.length) { %> 
   <% cafes.forEach(cafe => { %>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="/images/cafe/cafebg.png" class="card-img-top" alt="..."width="350" height="250">
+      <div class="card-body">
+        <p class="card-text">
+          <div class="cafe-info">
+            <h3><u>Name:</u> <br> <%= cafe.name %> </h3>
+            <h3><u>Location:</u> <br> <%= cafe.location %> </h3>
+            
+            <h3><a href="/cafes/<%= cafe._id %>">
+            <button class="infoBtn">Details</button></h3>
+            </a>
+            <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
+            <button class="infoBtn">Erase</button>
+            </form>   
+          </div>
+        </p>
+        <% }) %>
+      <% } else { %> 
+        <h2>There is no cafes added to this collection</h2>
+    <% } %> 
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+<!-- <% if (cafes.length) { %> 
+  <% cafes.forEach(cafe => { %>
     <div class="card" style="width: 18rem;">
-      <img src="/images/cafe/cafebg.png" class="card-img-top" alt="..."width="400" height="300">
+      <img src="/images/cafe/cafebg.png" class="card-img-top" alt="..."width="350" height="250">
         <div class="card-body">
           <p class="card-text">
             <div class="cafe-info">
-          <h3>Name: <%= cafe.name %> </h3>
-          <h3>Location: <%= cafe.location %> </h3>
-          <h3><a href="/cafes/<%= cafe._id %>">Details</a></h3>
+          <h3><u>Name:</u> <br> <%= cafe.name %> </h3>
+          <h3><u>Location:</u> <br> <%= cafe.location %> </h3>
+          
+          <h3><a href="/cafes/<%= cafe._id %>">
+          <button class="infoBtn">Details</button></h3>
+          </a>
           <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
-          <button>Erase</button>
+          <button class="infoBtn">Erase</button>
           </form>   
         </div>
           </p>
@@ -27,24 +60,6 @@
       <h2>There is no cafes added to this collection</h2>
   <% } %> 
   </div>
-</div>
-
-
-<!-- <% if (cafes.length) { %> 
-<% cafes.forEach(cafe => { %>
-  <div>
-    <h3>Name: <%= cafe.name %> </h3>
-    <h3>Location: <%= cafe.location %> </h3>
-    <h3><a href="/cafes/<%= cafe._id %>">Details</a></h3>
-  </div>
-  
-  <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
-    <button>Erase</button>
-  </form>
-  
-<% }) %>
-<% } else { %> 
-  <h2>There is no cafes added to this collection</h2>
-<% } %>  -->
+</div> -->
 
 <%- include('../partials/footer') %>
