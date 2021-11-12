@@ -1,22 +1,30 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
-<script src="javascript/app.js" type="module"></script>
+<link rel="stylesheet" href="/stylesheets/style.css">
 
-<main>
-  <h1>Welcome, <%= user ? user.profile.name : "friend" %></h1>
-  
+<section>
   <% if (user?.profile.avatar) { %>
-    <div>
-      <img 
-        src="<%= user.profile.avatar %>" 
-        alt="<%= user.profile.name %> avatar"
-      >
+        <div class="avatar-image">
+          <img 
+            src="<%= user.profile.avatar %>" 
+            alt="<%= user.profile.name %> avatar">
+        </div>
+        <div class="user-info">
+        <h3>Email: <%= user.email %></h3>
     </div>
-    <div>
-    <h3>Google Email: <%= user.email %></h3>
-    <h3>Name: <%= user.profile.name %></h3>
-  <% } %>
+    <% } %>
+  </p>
+    </div>
   </div>
-</main>
+</section>
+  <h2> Welcome to Espressonality, <%= user ? user.profile.name : "" %>!
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">Have all your favorite cafes organized in one place. Find new places to explore by going through the cafe catalog!</p>
+        <p class="card-text"></p>
+      </div>
+      <img src="/images/cafe/coffeehouse.png" class="card-img-bottom" alt="...">
+    </div>
+  </h2>
 
 <%- include('./partials/footer') %>
