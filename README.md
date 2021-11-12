@@ -16,7 +16,8 @@
 ![image of wireframe](public/images/project-imgs/Project2Wireframe.png)
 
 ### Final outloook of the application
-![image of ERD](public/images/project-imgs/espressonality-app.png)
+![image of application](public/images/project-imgs/espressonality-app.png)
+![image of application](public/images/project-imgs/app.png)
 
 ## Technology Implemented:
 + Axios
@@ -32,9 +33,6 @@
 + MongoDb
 + Passport.js
 + Google-Oauth 2.0
-
-## Trello Board
-[Trello Board](https://trello.com/b/jYhWQvOf/cafe-board) link
 
 ## Credits
 Images from [Pixaby](https://pixabay.com/)
