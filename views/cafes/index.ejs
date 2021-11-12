@@ -8,6 +8,29 @@
 </a>
 </h2>
 <% if (cafes.length) { %> 
+  <% cafes.forEach(cafe => { %>
+    <div class="card" style="width: 18rem;">
+      <img src="/images/cafe/cafebg.png" class="card-img-top" alt="..."width="400" height="300">
+        <div class="card-body">
+          <p class="card-text">
+            <div class="cafe-info">
+          <h3>Name: <%= cafe.name %> </h3>
+          <h3>Location: <%= cafe.location %> </h3>
+          <h3><a href="/cafes/<%= cafe._id %>">Details</a></h3>
+          <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
+          <button>Erase</button>
+          </form>   
+        </div>
+          </p>
+        <% }) %>
+      <% } else { %> 
+      <h2>There is no cafes added to this collection</h2>
+  <% } %> 
+  </div>
+</div>
+
+
+<!-- <% if (cafes.length) { %> 
 <% cafes.forEach(cafe => { %>
   <div>
     <h3>Name: <%= cafe.name %> </h3>
@@ -22,6 +45,6 @@
 <% }) %>
 <% } else { %> 
   <h2>There is no cafes added to this collection</h2>
-<% } %> 
+<% } %>  -->
 
 <%- include('../partials/footer') %>
