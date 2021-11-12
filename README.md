@@ -5,6 +5,9 @@
  + Users will be able to click on a specific cafe which will give them details about the cafe. 
 + Users will be able to view and add cafe reviews to each cafe added or have been previously added. 
 
+## Motivation 
+I've always been a coffee connoisseur so to build a tracker where I can input all my favorite cafes have always been on my list of things to do. 
+
 ## Getting Started: 
 ### Click [here](https://espressonality.herokuapp.com/) to go to the application. 
 
@@ -38,3 +41,4 @@ Images from [Pixaby](https://pixabay.com/)
 ## Stretch Goals
 + Add more profile application interaction
 + Add an additional page for user favorites
++ Seperate cafe in a subsection for location.
