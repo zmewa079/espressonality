@@ -9,8 +9,16 @@
         <img id="coffee-right" src="/images/cafe/crazycoffee.png" alt="" width="70" height="50"> 
       </a>
     </div>
+    <a href="/">
+      <button class="homeBtn" type="submit">Home</button>
+      </a>
+      <a href="/cafes">
+        <button class="catalogBtn" type="submit">Cafe Catalog</button>
+        </a>
     <% if (user) { %>
-      <a href="/auth/logout">Logout</a>
+      <a href="/auth/logout">
+        <button class="btn btn-success btn-lg float-right"  id="logoutBtn" type="submit">Logout</button>
+      </a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
@@ -18,11 +26,7 @@
         </button>
       </a>
     <% } %>
-    <a href="/cafes">
-    <button class="catalogBtn" type="submit">Cafe Catalog</button>
-    </a>
-    <a href="/">
-    <button class="homeBtn" type="submit">Home</button>
-    </a>
+
+    
     
   </nav>
